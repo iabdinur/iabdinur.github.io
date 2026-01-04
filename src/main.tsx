@@ -20,21 +20,6 @@ const queryClient = new QueryClient({
 const basePath = import.meta.env.VITE_BASE_PATH || '/'
 const basename = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
 
-// Handle GitHub Pages 404.html redirect
-// https://github.com/rafgraph/spa-github-pages
-const path = (location.pathname).replace(/^\/[^/]+/, '').replace(/\/$/, '')
-if (path) {
-  const pathSegmentsToKeep = 0
-  const l = window.location
-  l.replace(
-    l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-    l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/').replace(/\/$/, '') +
-    '/' + path.replace(/&/g, '~and~').replace(/\?/g, '&') +
-    (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-    l.hash
-  )
-}
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter basename={basename}>
