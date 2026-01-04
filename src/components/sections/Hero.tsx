@@ -11,6 +11,34 @@ export default function Hero() {
   const buttonBg = useColorModeValue('#EBEBEB', 'gray.600')
   const buttonHoverBg = useColorModeValue('gray.300', 'gray.500')
 
+  const handleResumeDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    try {
+      const response = await fetch('/resume.pdf')
+      if (!response.ok) {
+        throw new Error(`Failed to fetch resume: ${response.status} ${response.statusText}`)
+      }
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'Ibrahim_Abdinur_Resume.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Failed to download resume:', error)
+      // Fallback: try direct download link
+      const link = document.createElement('a')
+      link.href = '/resume.pdf'
+      link.download = 'Ibrahim_Abdinur_Resume.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+  }
+
   return (
     <Box py={{ base: 8, md: 12 }} px={{ base: 4, md: 0 }}>
       <Container 
@@ -110,9 +138,7 @@ export default function Hero() {
                   Portfolio
                 </Button>
                 <Button
-                  as="a"
-                  href="/resume.pdf"
-                  target="_blank"
+                  onClick={handleResumeDownload}
                   size="sm"
                   leftIcon={<FaFileDownload />}
                   bg={buttonBg}
