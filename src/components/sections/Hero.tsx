@@ -115,7 +115,7 @@ export default function Hero() {
                 </Button>
                 <Button
                   as="a"
-                  href="https://blog.abdinur.com"
+                  href="https://blog.iabdinur.com/"
                   target="_blank"
                   size="sm"
                   leftIcon={<FaBlog />}

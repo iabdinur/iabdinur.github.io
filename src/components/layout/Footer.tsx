@@ -18,7 +18,7 @@ export default function Footer() {
             <Link href="https://linkedin.com/in/ibrahim-abdinur" isExternal _hover={{ color: 'brand.400' }}>
               <Icon as={FaLinkedin} boxSize={6} color={iconColor} />
             </Link>
-                <Link href="https://blog.abdinur.com" isExternal _hover={{ color: 'brand.400' }}>
+                <Link href="https://blog.iabdinur.com/" isExternal _hover={{ color: 'brand.400' }}>
                   <Icon as={FaBlog} boxSize={6} color={iconColor} />
                 </Link>
             <Link href="mailto:iabdinur@icloud.com" _hover={{ color: 'brand.400' }}>

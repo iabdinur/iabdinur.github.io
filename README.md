@@ -47,7 +47,7 @@ iabdinur.github.io/
 - **Website**: [iabdinur.com](https://iabdinur.com)
 - **GitHub**: [@iabdinur](https://github.com/iabdinur)
 - **LinkedIn**: [ibrahim-abdinur](https://linkedin.com/in/ibrahim-abdinur)
-- **Blog**: [blog.abdinur.com](https://blog.abdinur.com)
+- **Blog**: [blog.iabdinur.com](https://blog.iabdinur.com/)
 - **Email**: iabdinur@icloud.com
 
 ## License

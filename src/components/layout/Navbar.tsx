@@ -116,7 +116,7 @@ export default function Navbar(props: NavbarProps) {
             alignItems="center"
           >
             <Link
-              href="https://blog.abdinur.com"
+              href="https://blog.iabdinur.com/"
               target="_blank"
               p={2}
               borderRadius="md"
@@ -176,7 +176,7 @@ export default function Navbar(props: NavbarProps) {
                   py={3}
                   _hover={{ bg: menuHoverBg }}
                   as={Link}
-                  href="https://blog.abdinur.com"
+                  href="https://blog.iabdinur.com/"
                   target="_blank"
                 >
                   Blog
