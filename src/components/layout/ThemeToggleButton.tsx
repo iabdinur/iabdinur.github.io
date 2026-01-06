@@ -22,15 +22,16 @@ const ThemeToggleButton = () => {
         <IconButton
           aria-label="Toggle theme"
           onClick={toggleColorMode}
-          w="48px"
-          h="48px"
-          borderRadius="lg"
+          size="sm"
+          w="40px"
+          h="40px"
+          borderRadius="md"
           bg={bgColor}
           _hover={{ bg: hoverBg }}
           icon={
             <Icon
               as={colorMode === 'light' ? FaMoon : FaSun}
-              boxSize="22px"
+              boxSize="16px"
               color={iconColor}
             />
           }
