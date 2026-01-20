@@ -48,11 +48,12 @@ export default function Hero() {
         alignItems="flex-start"
         pt={{ base: 4, md: 8 }}
       >
-        <VStack spacing={{ base: 6, md: 8 }} align="center" w="100%">
+        <VStack spacing={{ base: 40, md: 72 }} align="center" w="100%">
         <MotionBox
           w={{ base: "300px", md: "400px" }}
           aspectRatio={1}
           flexShrink={0}
+          pt={{ base: 4, md: 8 }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
@@ -66,29 +67,48 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Box
-            display="flex"
-            flexDirection={{ base: 'column', md: 'row' }}
-            alignItems={{ base: 'center', md: 'flex-start' }}
-            justifyContent="space-between"
-            gap={{ base: 4, md: 6 }}
-            w="100%"
-          >
-            <VStack spacing={1} align="flex-start" flex="1" textAlign="left">
-              <Heading size="2xl" color={headingColor} fontWeight="bold" mb={1}>
-                Ibrahim Abdinur
-              </Heading>
-              <Text fontSize="xl" color={textColor}>
-                MCS @ Illinois
-              </Text>
-              <Text fontSize="xl" color={textColor}>
-                Founder & Chief Engineer @ Hantiile
-              </Text>
-              <Text fontSize="xl" color={textColor}>
-                Software Engineer ( Backend Developer / Cloud Architect )
-              </Text>
-              
-              <HStack spacing={2} pt={4} flexWrap="wrap">
+          <Box w="100%">
+            <VStack spacing={4} align="flex-start" w="100%">
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="flex-start"
+                gap={{ base: 3, md: 6 }}
+                w="100%"
+              >
+                <Box
+                  borderRadius="full"
+                  overflow="hidden"
+                  w={{ base: "120px", md: "180px" }}
+                  h={{ base: "120px", md: "180px" }}
+                  borderWidth="2px"
+                  borderColor={useColorModeValue('gray.200', '#202020')}
+                  flexShrink={0}
+                >
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Ibrahim Abdinur"
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                  />
+                </Box>
+                <VStack spacing={2} align="flex-start" flex="1" textAlign="left" pt={0} minW={0} maxW="100%">
+                  <Heading size={{ base: "xl", md: "3xl" }} color={headingColor} fontWeight="bold" mb={1}>
+                    Ibrahim Abdinur
+                  </Heading>
+                  <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
+                    MCS @ Illinois
+                  </Text>
+                  <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
+                    Founder & Chief Engineer @ Hantiile
+                  </Text>
+                  <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
+                    Software Engineer ( Backend Developer / Cloud Architect )
+                  </Text>
+                </VStack>
+              </Box>
+              <HStack spacing={2} flexWrap="wrap" justifyContent="flex-start" align="flex-start">
                 <Button
                   as="a"
                   href="https://linkedin.com/in/ibrahim-abdinur"
@@ -149,23 +169,6 @@ export default function Hero() {
                 </Button>
               </HStack>
             </VStack>
-            <Box
-              borderRadius="full"
-              overflow="hidden"
-              w={{ base: "100px", md: "120px" }}
-              h={{ base: "100px", md: "120px" }}
-              borderWidth="2px"
-              borderColor={useColorModeValue('gray.200', '#202020')}
-              flexShrink={0}
-            >
-              <Image
-                src="/images/profile.jpg"
-                alt="Ibrahim Abdinur"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-              />
-            </Box>
           </Box>
         </motion.div>
       </VStack>
