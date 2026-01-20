@@ -21,7 +21,7 @@ export default function Interests() {
   const headingColor = useColorModeValue('black', 'white')
 
   return (
-    <Box py={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
+    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
       <Container maxW="container.md">
         <MotionBox
           initial={{ opacity: 0, y: 20 }}

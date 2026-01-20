@@ -31,7 +31,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0', // Allow access from network devices
+    host: '0.0.0.0', // Allow access from network devices (accessible at http://192.168.1.11:5173 from phone)
     port: 5173,
     open: true,
   },

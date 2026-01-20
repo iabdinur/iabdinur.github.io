@@ -48,7 +48,7 @@ export default function Hero() {
         alignItems="flex-start"
         pt={{ base: 4, md: 8 }}
       >
-        <VStack spacing={{ base: 40, md: 72 }} align="center" w="100%">
+        <VStack spacing={{ base: 24, md: 40 }} align="center" w="100%">
         <MotionBox
           w={{ base: "300px", md: "400px" }}
           aspectRatio={1}
@@ -94,17 +94,17 @@ export default function Hero() {
                   />
                 </Box>
                 <VStack spacing={2} align="flex-start" flex="1" textAlign="left" pt={0} minW={0} maxW="100%">
-                  <Heading size={{ base: "xl", md: "3xl" }} color={headingColor} fontWeight="bold" mb={1}>
+                  <Heading size={{ base: "lg", md: "3xl" }} color={headingColor} fontWeight="bold" mb={1}>
                     Ibrahim Abdinur
                   </Heading>
                   <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
                     MCS @ Illinois
                   </Text>
                   <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
-                    Founder & Chief Engineer @ Hantiile
+                    Chief Engineer @ Hantiile
                   </Text>
                   <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
-                    Software Engineer ( Backend Developer / Cloud Architect )
+                    Backend | Cloud Architect
                   </Text>
                 </VStack>
               </Box>
