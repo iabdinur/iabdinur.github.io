@@ -28,54 +28,53 @@ import { BiLogoPostgresql } from 'react-icons/bi'
 
 const MotionBox = motion(Box)
 
-// Mirrors the Technical Skills section of the resume (public/resume.pdf).
 const skillCategories = [
   {
     title: 'Languages',
     skills: [
-      { name: 'Java', icon: FaJava, color: '#ED8B00' }, // Java orange
-      { name: 'C#', icon: SiDotnet, color: '#512BD4' }, // .NET purple
-      { name: 'Python', icon: SiPython, color: '#3776AB' }, // Python blue
-      { name: 'SQL', icon: FaDatabase, color: '#336791' }, // SQL blue
-      { name: 'Haskell', icon: SiHaskell, color: '#5D4F85' }, // Haskell purple (UIUC MCS, CS 421)
-      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' }, // TypeScript blue
+      { name: 'Java', icon: FaJava, color: '#ED8B00' },
+      { name: 'C#', icon: SiDotnet, color: '#512BD4' },
+      { name: 'Python', icon: SiPython, color: '#3776AB' },
+      { name: 'SQL', icon: FaDatabase, color: '#336791' },
+      { name: 'Haskell', icon: SiHaskell, color: '#5D4F85' },
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
     ],
   },
   {
     title: 'Frameworks & Services',
     skills: [
-      { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' }, // Spring green
-      { name: 'ASP.NET', icon: SiDotnet, color: '#512BD4' }, // .NET purple
-      { name: 'React', icon: FaReact, color: '#61DAFB' }, // React cyan
+      { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' },
+      { name: 'ASP.NET', icon: SiDotnet, color: '#512BD4' },
+      { name: 'React', icon: FaReact, color: '#61DAFB' },
     ],
   },
   {
     title: 'Data & Messaging',
     skills: [
-      { name: 'PostgreSQL', icon: BiLogoPostgresql, color: '#336791' }, // PostgreSQL blue
-      { name: 'SQL Server', icon: FaDatabase, color: '#CC2927' }, // SQL Server red
-      { name: 'Redis', icon: SiRedis, color: '#DC382D' }, // Redis red
-      { name: 'RabbitMQ', icon: SiRabbitmq, color: '#FF6600' }, // RabbitMQ orange
+      { name: 'PostgreSQL', icon: BiLogoPostgresql, color: '#336791' },
+      { name: 'SQL Server', icon: FaDatabase, color: '#CC2927' },
+      { name: 'Redis', icon: SiRedis, color: '#DC382D' },
+      { name: 'RabbitMQ', icon: SiRabbitmq, color: '#FF6600' },
     ],
   },
   {
     title: 'Cloud & DevOps',
     skills: [
-      { name: 'AWS', icon: FaAws, color: '#FF9900' }, // AWS orange
-      { name: 'Azure', icon: FaCloud, color: '#0078D4' }, // Azure blue
-      { name: 'Docker', icon: FaDocker, color: '#2496ED' }, // Docker blue
-      { name: 'Kubernetes', icon: SiKubernetes, color: '#326CE5' }, // Kubernetes blue
-      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' }, // GitHub Actions blue
+      { name: 'AWS', icon: FaAws, color: '#FF9900' },
+      { name: 'Azure', icon: FaCloud, color: '#0078D4' },
+      { name: 'Docker', icon: FaDocker, color: '#2496ED' },
+      { name: 'Kubernetes', icon: SiKubernetes, color: '#326CE5' },
+      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' },
     ],
   },
   {
     title: 'Testing & Tools',
     skills: [
-      { name: 'JUnit', icon: SiJunit5, color: '#25A162' }, // JUnit green
-      { name: 'Mockito', icon: FaVial, color: '#78A641' }, // generic icon, Mockito green
-      { name: 'Testcontainers', icon: FaBoxes, color: '#2E9E95' }, // generic icon, Testcontainers teal
-      { name: 'Git', icon: FaGitAlt, color: '#F05032' }, // Git orange
-      { name: 'GitHub', icon: FaGithub, color: '#181717' }, // GitHub black (use white in dark mode)
+      { name: 'JUnit', icon: SiJunit5, color: '#25A162' },
+      { name: 'Mockito', icon: FaVial, color: '#78A641' },
+      { name: 'Testcontainers', icon: FaBoxes, color: '#2E9E95' },
+      { name: 'Git', icon: FaGitAlt, color: '#F05032' },
+      { name: 'GitHub', icon: FaGithub, color: '#181717' },
     ],
   },
 ]
@@ -87,7 +86,6 @@ export default function Skills() {
   const headingColor = useColorModeValue('gray.900', 'gray.100')
 
 
-  // Helper function to get icon color based on color mode
   const getIconColor = (skillColor: string, skillName: string) => {
     // For dark icons (GitHub), use white in dark mode
     if (skillName === 'GitHub' && colorMode === 'dark') {

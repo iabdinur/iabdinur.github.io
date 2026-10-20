@@ -28,7 +28,6 @@ export default function Hero() {
       window.URL.revokeObjectURL(url)
     } catch (error) {
       console.error('Failed to download resume:', error)
-      // Fallback: try direct download link
       const link = document.createElement('a')
       link.href = '/resume.pdf'
       link.download = 'Ibrahim_Abdinur_Resume.pdf'
@@ -43,7 +42,7 @@ export default function Hero() {
       <Container
         maxW="680px"
         px={{ base: 4, md: 8 }}
-        minH={{ base: "calc(100vh - 64px)", md: "calc(100vh - 64px)" }}
+        minH={{ base: "auto", md: "calc(100vh - 64px)" }}
         display="flex"
         alignItems="flex-start"
         pt={{ base: 4, md: 8 }}

@@ -15,8 +15,6 @@ const queryClient = new QueryClient({
   },
 })
 
-// Set basename for React Router - use VITE_BASE_PATH if set, otherwise use '/'
-// Remove trailing slash if present
 const basePath = import.meta.env.VITE_BASE_PATH || '/'
 const basename = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
 

@@ -16,7 +16,6 @@ const interests = [
   'reading',
 ]
 
-// Reads as one sentence: "Software engineering, cloud computing, ..., and reading."
 const interestsSentence = (() => {
   const text = `${interests.slice(0, -1).join(', ')}, and ${interests[interests.length - 1]}.`
   return text.charAt(0).toUpperCase() + text.slice(1)

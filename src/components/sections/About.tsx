@@ -23,7 +23,7 @@ export default function About() {
             </Text>
             <Text fontSize="lg" color={textColor} lineHeight="tall">
               My favorite part of software engineering is turning complex ideas into systems people can actually rely on. I am also the founder and lead engineer of Hantiile, a real estate marketplace and agency CRM that I built end to end on a modern stack: Java and Spring Boot microservices, PostgreSQL, RabbitMQ, and React. Most of my work is in Java, C#, SQL, and TypeScript, with a strong focus on reliability and maintainability. I also write about what I learn on{' '}
-              <Link href="https://blog.iabdinur.dev/" isExternal color="brand.600" _dark={{ color: 'brand.300' }} _hover={{ textDecoration: 'underline' }}>
+              <Link href="https://blog.iabdinur.dev/" isExternal color="inherit" _hover={{ textDecoration: 'underline' }}>
                 my blog
               </Link>
               , from UIUC MCS course reviews to software engineering and system design, and I am a big proponent of open source development.

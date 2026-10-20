@@ -5,9 +5,7 @@ import { fetchExperiences, staticExperiences } from '../../api/experience'
 
 const MotionBox = motion(Box)
 
-// Helper function to parse date from period string
 const parseDate = (period: string): Date => {
-  // Handle "Present" as current date
   if (period.includes('Present')) {
     return new Date()
   }
@@ -37,11 +35,9 @@ const parseDate = (period: string): Date => {
     return new Date(parseInt(singleYear[1]), 0, 1)
   }
   
-  // Fallback to very old date
   return new Date(0)
 }
 
-// Sort experiences by date (most recent first)
 const sortExperiencesByDate = (experiences: typeof staticExperiences) => {
   return [...experiences].sort((a, b) => {
     const dateA = parseDate(a.period)
@@ -59,7 +55,6 @@ export default function Experience() {
     retry: false,
   })
 
-  // Sort experiences by date
   const sortedExperiences = sortExperiencesByDate(experiences)
 
   const textColor = useColorModeValue('gray.600', 'gray.400')
@@ -82,7 +77,6 @@ export default function Experience() {
         </MotionBox>
 
         <VStack spacing={{ base: 6, md: 8 }} align="stretch" position="relative" mt={{ base: 6, md: 8 }}>
-            {/* Timeline line */}
             <Box
               position="absolute"
               left="20px"
@@ -103,7 +97,6 @@ export default function Experience() {
                 position="relative"
                 pl={{ base: 0, md: 12 }}
               >
-                {/* Timeline dot */}
                 <Box
                   position="absolute"
                   left={{ base: 0, md: '14px' }}

@@ -5,7 +5,6 @@ import { Box, useColorModeValue, useColorMode } from '@chakra-ui/react'
 import { makeVoxelCamel } from './models/camel'
 
 function Model({ colorMode }: { colorMode: 'light' | 'dark' }) {
-  // Create the voxel camel with color mode awareness - recreate when colorMode changes
   const camel = useMemo(() => {
     const camelGroup = makeVoxelCamel(0.05, colorMode)
     camelGroup.position.set(0, 0, 0)

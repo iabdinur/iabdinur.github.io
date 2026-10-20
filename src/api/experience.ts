@@ -12,7 +12,6 @@ export interface Experience {
 }
 
 export const fetchExperiences = async (): Promise<Experience[]> => {
-  // If no API URL is configured, return static data immediately
   if (!import.meta.env.VITE_API_URL) {
     return staticExperiences
   }
@@ -29,8 +28,6 @@ export const fetchExperiences = async (): Promise<Experience[]> => {
   }
 }
 
-// Static data for development/demo
-// Note: Education entries have been moved to Bio section
 export const staticExperiences: Experience[] = [
   {
     id: '1',
@@ -70,7 +67,7 @@ export const staticExperiences: Experience[] = [
       'Optimized SQL Server queries and stored procedures, reduced redundant packages during modernization, and led the source-control migration from TFS to GitHub to strengthen CI/CD.',
       'Delivered production support through log analysis, root-cause investigation, and fix delivery, handling more than 100 technical inquiries a week in an Agile Scrum environment.',
     ],
-    technologies: ['C#', '.NET', 'ASP.NET MVC', 'SQL Server', 'REST APIs', 'GitHub', 'CI/CD'],
+    technologies: ['C#', '.NET', 'ASP.NET MVC', 'SQL Server', 'REST APIs', 'Git', 'CI/CD'],
   },
 ]
 

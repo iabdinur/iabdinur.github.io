@@ -11,12 +11,11 @@ export default function Projects() {
   const { data: projects, isLoading } = useQuery({
     queryKey: ['projects'],
     queryFn: fetchProjects,
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 5,
     initialData: staticProjects,
-    retry: false, // Don't retry failed requests
+    retry: false,
   })
 
-  // Ensure projects is always an array, fallback to staticProjects
   const projectsList = Array.isArray(projects) ? projects : staticProjects
   
   const cardBg = useColorModeValue('white', 'gray.800')

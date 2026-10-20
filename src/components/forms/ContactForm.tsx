@@ -44,7 +44,6 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Replace with your actual API endpoint
       await apiClient.post('/contact', data)
       toast({
         title: 'Message sent',
