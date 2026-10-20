@@ -46,35 +46,30 @@ export default function Home() {
       <Box 
         id="me" 
         css={{ scrollMarginTop: '80px' }}
-        sx={{ '@media (max-width: 768px)': { scrollMarginTop: '70px' } }}
       >
         <About />
       </Box>
       <Box 
         id="education" 
         css={{ scrollMarginTop: '80px' }}
-        sx={{ '@media (max-width: 768px)': { scrollMarginTop: '70px' } }}
       >
         <Education />
       </Box>
       <Box 
         id="skills" 
         css={{ scrollMarginTop: '80px' }}
-        sx={{ '@media (max-width: 768px)': { scrollMarginTop: '70px' } }}
       >
         <Skills />
       </Box>
       <Box 
         id="experience" 
         css={{ scrollMarginTop: '80px' }}
-        sx={{ '@media (max-width: 768px)': { scrollMarginTop: '70px' } }}
       >
         <Experience />
       </Box>
       <Box 
         id="interests" 
         css={{ scrollMarginTop: '80px' }}
-        sx={{ '@media (max-width: 768px)': { scrollMarginTop: '70px' } }}
       >
         <Interests />
       </Box>

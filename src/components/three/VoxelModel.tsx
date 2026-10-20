@@ -16,17 +16,15 @@ function Model({ colorMode }: { colorMode: 'light' | 'dark' }) {
 }
 
 export default function VoxelModel() {
-  const borderColor = useColorModeValue('gray.200', '#202020')
-  const pageBg = useColorModeValue('white', '#212934')
+  const cardBg = useColorModeValue('white', 'gray.800')
   const { colorMode } = useColorMode()
-  
+
   return (
     <Box
       w="100%"
       h="100%"
-      bg={pageBg}
-      borderWidth="1px"
-      borderColor={borderColor}
+      bg={cardBg}
+      boxShadow="md"
       borderRadius="lg"
       p={4}
       position="relative"

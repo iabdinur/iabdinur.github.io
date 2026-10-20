@@ -62,17 +62,16 @@ export default function Experience() {
   // Sort experiences by date
   const sortedExperiences = sortExperiencesByDate(experiences)
 
-  const textColor = useColorModeValue('black', 'white')
-  const headingColor = useColorModeValue('black', 'white')
-  const borderColor = useColorModeValue('gray.200', '#202020')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
+  const headingColor = useColorModeValue('gray.900', 'gray.100')
+  const titleColor = useColorModeValue('gray.900', 'gray.100')
+  const borderColor = useColorModeValue('gray.200', 'gray.700')
   const yearColor = useColorModeValue('gray.600', 'gray.400')
-  const tagBg = useColorModeValue('#EBEBEB', 'gray.600')
-  const tagColor = useColorModeValue('black', 'white')
-  const timelineDotColor = useColorModeValue('#004aad', '#FFFFFF')
+  const dotRingColor = useColorModeValue('white', 'gray.900')
 
   return (
-    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
-      <Container maxW="container.md">
+    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }}>
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,16 +111,16 @@ export default function Experience() {
                   w="12px"
                   h="12px"
                   borderRadius="full"
-                  bg={timelineDotColor}
+                  bg="brand.600"
                   border="2px solid"
-                  borderColor={useColorModeValue('white', '#212934')}
+                  borderColor={dotRingColor}
                   zIndex={1}
                   display={{ base: 'none', md: 'block' }}
                 />
 
                 <Box>
                   <HStack spacing={4} mb={2} flexWrap="wrap">
-                    <Text fontWeight="bold" fontSize="lg" color={textColor}>
+                    <Text fontWeight="bold" fontSize="lg" color={titleColor}>
                       {exp.title}
                     </Text>
                     <Text fontSize="sm" color={yearColor}>
@@ -156,7 +155,7 @@ export default function Experience() {
                   {exp.technologies && exp.technologies.length > 0 && (
                     <HStack spacing={2} flexWrap="wrap" mt={3}>
                       {exp.technologies.map((tech) => (
-                        <Tag key={tech} size="sm" bg={tagBg} color={tagColor} borderRadius="md">
+                        <Tag key={tech} size="sm" colorScheme="brand" variant="subtle" borderRadius="md">
                           {tech}
                         </Tag>
                       ))}

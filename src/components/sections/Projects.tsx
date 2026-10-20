@@ -19,13 +19,12 @@ export default function Projects() {
   // Ensure projects is always an array, fallback to staticProjects
   const projectsList = Array.isArray(projects) ? projects : staticProjects
   
-  const cardBg = useColorModeValue('white', '#212934')
-  const textColor = useColorModeValue('black', 'white')
-  const borderColor = useColorModeValue('gray.200', '#202020')
+  const cardBg = useColorModeValue('white', 'gray.800')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
     <Box py={20}>
-      <Container maxW="container.xl">
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
         <VStack spacing={12}>
           <Heading size="xl">Featured Projects</Heading>
           {isLoading ? (
@@ -51,11 +50,11 @@ export default function Projects() {
                   style={{ height: '100%' }}
                 >
                   <Card
-                    _hover={{ transform: 'translateY(-5px)' }}
+                    _hover={{ boxShadow: 'lg' }}
                     bg={cardBg}
                     h="100%"
-                    borderWidth="1px"
-                    borderColor={borderColor}
+                    borderRadius="lg"
+                    boxShadow="md"
                   >
                     <Image src={project.image} alt={project.title} h="200px" objectFit="cover" />
                     <CardBody>

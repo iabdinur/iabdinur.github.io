@@ -6,10 +6,9 @@ import VoxelModel from '../three/VoxelModel'
 const MotionBox = motion(Box)
 
 export default function Hero() {
-  const textColor = useColorModeValue('black', 'white')
-  const headingColor = useColorModeValue('black', 'white')
-  const buttonBg = useColorModeValue('#EBEBEB', 'gray.600')
-  const buttonHoverBg = useColorModeValue('gray.300', 'gray.500')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
+  const headingColor = useColorModeValue('gray.900', 'gray.100')
+  const avatarBorder = useColorModeValue('gray.200', 'gray.700')
 
   const handleResumeDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -40,11 +39,12 @@ export default function Hero() {
   }
 
   return (
-    <Box py={{ base: 8, md: 12 }} px={{ base: 4, md: 0 }}>
-      <Container 
-        maxW="container.md"
-        minH={{ base: "calc(100vh - 70px)", md: "calc(100vh - 80px)" }} 
-        display="flex" 
+    <Box py={{ base: 8, md: 12 }}>
+      <Container
+        maxW="680px"
+        px={{ base: 4, md: 8 }}
+        minH={{ base: "calc(100vh - 64px)", md: "calc(100vh - 64px)" }}
+        display="flex"
         alignItems="flex-start"
         pt={{ base: 4, md: 8 }}
       >
@@ -82,7 +82,7 @@ export default function Hero() {
                   w={{ base: "120px", md: "180px" }}
                   h={{ base: "120px", md: "180px" }}
                   borderWidth="2px"
-                  borderColor={useColorModeValue('gray.200', '#202020')}
+                  borderColor={avatarBorder}
                   flexShrink={0}
                 >
                   <Image
@@ -101,10 +101,10 @@ export default function Hero() {
                     MCS @ Illinois
                   </Text>
                   <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
-                    Chief Engineer @ Hantiile
+                    Founder &amp; Lead Engineer @ Hantiile
                   </Text>
                   <Text fontSize={{ base: "md", md: "2xl" }} color={textColor}>
-                    Backend | Cloud Architect
+                    Backend Engineer
                   </Text>
                 </VStack>
               </Box>
@@ -115,9 +115,8 @@ export default function Hero() {
                   target="_blank"
                   size="sm"
                   leftIcon={<FaLinkedin />}
-                  bg={buttonBg}
-                  color={textColor}
-                  _hover={{ bg: buttonHoverBg }}
+                  variant="outline"
+                  colorScheme="brand"
                 >
                   LinkedIn
                 </Button>
@@ -127,33 +126,30 @@ export default function Hero() {
                   target="_blank"
                   size="sm"
                   leftIcon={<FaGithub />}
-                  bg={buttonBg}
-                  color={textColor}
-                  _hover={{ bg: buttonHoverBg }}
+                  variant="outline"
+                  colorScheme="brand"
                 >
                   GitHub
                 </Button>
                 <Button
                   as="a"
-                  href="https://blog.iabdinur.com/"
+                  href="https://blog.iabdinur.dev/"
                   target="_blank"
                   size="sm"
                   leftIcon={<FaBlog />}
-                  bg={buttonBg}
-                  color={textColor}
-                  _hover={{ bg: buttonHoverBg }}
+                  variant="outline"
+                  colorScheme="brand"
                 >
                   Blog
                 </Button>
                 <Button
                   as="a"
-                  href="https://portfolio.iabdinur.com/"
+                  href="https://portfolio.iabdinur.dev/"
                   target="_blank"
                   size="sm"
                   leftIcon={<FaBriefcase />}
-                  bg={buttonBg}
-                  color={textColor}
-                  _hover={{ bg: buttonHoverBg }}
+                  variant="outline"
+                  colorScheme="brand"
                 >
                   Portfolio
                 </Button>
@@ -161,9 +157,8 @@ export default function Hero() {
                   onClick={handleResumeDownload}
                   size="sm"
                   leftIcon={<FaFileDownload />}
-                  bg={buttonBg}
-                  color={textColor}
-                  _hover={{ bg: buttonHoverBg }}
+                  variant="outline"
+                  colorScheme="brand"
                 >
                   Resume
                 </Button>

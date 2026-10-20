@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
@@ -22,6 +22,7 @@ const basename = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <BrowserRouter basename={basename}>
       <QueryClientProvider client={queryClient}>
         <ChakraProvider theme={theme}>

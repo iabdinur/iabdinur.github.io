@@ -1,36 +1,48 @@
-import { Box, Text, Center, HStack, Link, Icon, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Text, Link, HStack, Icon, VStack, useColorModeValue } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaBlog, FaEnvelope } from 'react-icons/fa'
 
+const mutedLink = {
+  color: 'gray.600',
+  _dark: { color: 'gray.400' },
+  _hover: { color: 'gray.900', _dark: { color: 'gray.200' } },
+}
+
 export default function Footer() {
-  const bgColor = useColorModeValue('gray.100', '#212934')
-  const borderColor = useColorModeValue('gray.200', '#202020')
-  const textColor = useColorModeValue('gray.600', 'white')
-  const iconColor = useColorModeValue('gray.700', 'white')
+  const bg = useColorModeValue('white', 'gray.900')
+  const color = useColorModeValue('gray.900', 'gray.200')
 
   return (
-    <Box bg={bgColor} py={{ base: 6, md: 8 }} borderTop="1px" borderColor={borderColor} mt={{ base: 12, md: 20 }}>
-      <Center>
-        <Box textAlign="center">
-          <HStack spacing={6} justify="center" mb={4}>
-            <Link href="https://github.com/iabdinur" isExternal _hover={{ color: 'brand.400' }}>
-              <Icon as={FaGithub} boxSize={6} color={iconColor} />
-            </Link>
-            <Link href="https://linkedin.com/in/ibrahim-abdinur" isExternal _hover={{ color: 'brand.400' }}>
-              <Icon as={FaLinkedin} boxSize={6} color={iconColor} />
-            </Link>
-                <Link href="https://blog.iabdinur.com/" isExternal _hover={{ color: 'brand.400' }}>
-                  <Icon as={FaBlog} boxSize={6} color={iconColor} />
-                </Link>
-            <Link href="mailto:iabdinur@icloud.com" _hover={{ color: 'brand.400' }}>
-              <Icon as={FaEnvelope} boxSize={6} color={iconColor} />
-            </Link>
-          </HStack>
-          <Text fontSize="sm" color={textColor}>
-            © {new Date().getFullYear()} Ibrahim Abdiinur
-          </Text>
+    <Box bg={bg} color={color} mt="auto" py={8}>
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
+        <Box
+          borderTop="1px"
+          borderColor="gray.200"
+          _dark={{ borderColor: 'gray.700' }}
+          pt={4}
+          mx={{ base: -4, md: -8 }}
+          px={{ base: 4, md: 8 }}
+        >
+          <VStack spacing={3}>
+            <Text textAlign="center" fontSize="sm" color="gray.600" _dark={{ color: 'gray.400' }}>
+              © {new Date().getFullYear()} Ibrahim Abdinur
+            </Text>
+            <HStack spacing={4} justify="center">
+              <Link href="https://github.com/iabdinur" isExternal {...mutedLink}>
+                <Icon as={FaGithub} boxSize={5} />
+              </Link>
+              <Link href="https://linkedin.com/in/ibrahim-abdinur" isExternal {...mutedLink}>
+                <Icon as={FaLinkedin} boxSize={5} />
+              </Link>
+              <Link href="https://blog.iabdinur.dev/" isExternal {...mutedLink}>
+                <Icon as={FaBlog} boxSize={5} />
+              </Link>
+              <Link href="mailto:iabdinur@icloud.com" {...mutedLink}>
+                <Icon as={FaEnvelope} boxSize={5} />
+              </Link>
+            </HStack>
+          </VStack>
         </Box>
-      </Center>
+      </Container>
     </Box>
   )
 }
-

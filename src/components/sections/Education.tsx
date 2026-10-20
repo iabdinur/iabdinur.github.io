@@ -5,7 +5,7 @@ const MotionBox = motion(Box)
 
 const educationEntries = [
   {
-    year: '2027',
+    year: '2026',
     text: 'Master of Computer Science (MCS), University of Illinois Urbana-Champaign',
   },
   {
@@ -15,13 +15,13 @@ const educationEntries = [
 ]
 
 export default function Education() {
-  const textColor = useColorModeValue('black', 'white')
-  const headingColor = useColorModeValue('black', 'white')
-  const yearColor = useColorModeValue('black', 'white')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
+  const headingColor = useColorModeValue('gray.900', 'gray.100')
+  const yearColor = useColorModeValue('gray.900', 'gray.100')
 
   return (
-    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
-      <Container maxW="container.md">
+    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }}>
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

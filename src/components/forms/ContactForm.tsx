@@ -37,18 +37,18 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
   })
 
-  const inputBg = useColorModeValue('white', '#212934')
-  const inputBorder = useColorModeValue('gray.300', '#202020')
-  const labelColor = useColorModeValue('black', 'white')
-  const textColor = useColorModeValue('black', 'white')
+  const inputBg = useColorModeValue('white', 'gray.800')
+  const inputBorder = useColorModeValue('gray.200', 'gray.700')
+  const labelColor = useColorModeValue('gray.900', 'gray.100')
+  const textColor = useColorModeValue('gray.900', 'gray.100')
 
   const onSubmit = async (data: ContactFormData) => {
     try {
       // Replace with your actual API endpoint
       await apiClient.post('/contact', data)
       toast({
-        title: 'Message sent!',
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: 'Message sent',
+        description: 'Thank you for reaching out. I will reply as soon as I can.',
         status: 'success',
         duration: 5000,
         isClosable: true,
@@ -56,8 +56,8 @@ export default function ContactForm() {
       reset()
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
+        title: 'Message not sent',
+        description: 'Something went wrong while sending your message. Please try again later.',
         status: 'error',
         duration: 5000,
         isClosable: true,
@@ -83,8 +83,8 @@ export default function ContactForm() {
                 bg={inputBg}
                 borderColor={inputBorder}
                 color={textColor}
-                _hover={{ borderColor: 'brand.400' }}
-                _focus={{ borderColor: 'brand.400', boxShadow: '0 0 0 1px var(--chakra-colors-brand-400)' }}
+                _hover={{ borderColor: 'brand.500' }}
+                _focus={{ borderColor: 'brand.600', boxShadow: '0 0 0 1px var(--chakra-colors-brand-600)' }}
               />
           <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
         </FormControl>
@@ -98,8 +98,8 @@ export default function ContactForm() {
                 bg={inputBg}
                 borderColor={inputBorder}
                 color={textColor}
-                _hover={{ borderColor: 'brand.400' }}
-                _focus={{ borderColor: 'brand.400', boxShadow: '0 0 0 1px var(--chakra-colors-brand-400)' }}
+                _hover={{ borderColor: 'brand.500' }}
+                _focus={{ borderColor: 'brand.600', boxShadow: '0 0 0 1px var(--chakra-colors-brand-600)' }}
               />
           <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
         </FormControl>
@@ -113,8 +113,8 @@ export default function ContactForm() {
                 bg={inputBg}
                 borderColor={inputBorder}
                 color={textColor}
-                _hover={{ borderColor: 'brand.400' }}
-                _focus={{ borderColor: 'brand.400', boxShadow: '0 0 0 1px var(--chakra-colors-brand-400)' }}
+                _hover={{ borderColor: 'brand.500' }}
+                _focus={{ borderColor: 'brand.600', boxShadow: '0 0 0 1px var(--chakra-colors-brand-600)' }}
               />
           <FormErrorMessage>{errors.message?.message}</FormErrorMessage>
         </FormControl>

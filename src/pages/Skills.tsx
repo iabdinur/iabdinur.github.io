@@ -14,13 +14,11 @@ const skills = [
 ]
 
 export default function Skills() {
-  const cardBg = useColorModeValue('white', '#212934')
-  const cardHoverBg = useColorModeValue('gray.100', '#2a3d52')
-  const textColor = useColorModeValue('black', 'white')
-  const borderColor = useColorModeValue('gray.200', '#202020')
+  const cardBg = useColorModeValue('white', 'gray.800')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
-    <Container maxW="container.xl" py={20}>
+    <Container maxW="680px" px={{ base: 4, md: 8 }} py={20}>
       <VStack spacing={12}>
         <MotionBox
           initial={{ opacity: 0, y: 20 }}
@@ -34,21 +32,20 @@ export default function Skills() {
           </Text>
         </MotionBox>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} w="100%">
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} w="100%">
           {skills.map((skill, index) => (
             <MotionBox
               key={skill.title}
               p={6}
               bg={cardBg}
               borderRadius="lg"
-              borderWidth="1px"
-              borderColor={borderColor}
+              boxShadow="md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              _hover={{ transform: 'translateY(-5px)', bg: cardHoverBg }}
+              _hover={{ boxShadow: 'lg' }}
             >
-              <Icon as={skill.icon} boxSize={8} color="brand.400" mb={4} />
+              <Icon as={skill.icon} boxSize={8} color="brand.600" mb={4} />
               <Heading size="md" mb={2}>{skill.title}</Heading>
               <Text color={textColor}>{skill.description}</Text>
             </MotionBox>

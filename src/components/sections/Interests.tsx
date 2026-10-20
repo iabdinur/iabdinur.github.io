@@ -4,25 +4,31 @@ import { motion } from 'framer-motion'
 const MotionBox = motion(Box)
 
 const interests = [
-  'Software Engineering',
-  'Cloud Computing',
-  'Machine Learning',
-  'Systems & Reliability',
-  'Community Engagement',
-  'Art',
-  'Music',
-  'Fitness',
-  'Hiking',
-  'Reading',
+  'software engineering',
+  'cloud computing',
+  'machine learning',
+  'systems and reliability',
+  'community engagement',
+  'art',
+  'music',
+  'fitness',
+  'hiking',
+  'reading',
 ]
 
+// Reads as one sentence: "Software engineering, cloud computing, ..., and reading."
+const interestsSentence = (() => {
+  const text = `${interests.slice(0, -1).join(', ')}, and ${interests[interests.length - 1]}.`
+  return text.charAt(0).toUpperCase() + text.slice(1)
+})()
+
 export default function Interests() {
-  const textColor = useColorModeValue('black', 'white')
-  const headingColor = useColorModeValue('black', 'white')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
+  const headingColor = useColorModeValue('gray.900', 'gray.100')
 
   return (
-    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
-      <Container maxW="container.md">
+    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }}>
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +37,7 @@ export default function Interests() {
         >
           <Heading size="lg" mb={4} color={headingColor}>Interests</Heading>
           <Text fontSize="lg" color={textColor}>
-            {interests.join(', ')}
+            {interestsSentence}
           </Text>
         </MotionBox>
       </Container>

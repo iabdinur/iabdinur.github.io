@@ -1,10 +1,16 @@
-import { extendTheme } from '@chakra-ui/react'
+// Shared theme for blog.iabdinur.com, iabdinur.com and portfolio.iabdinur.com.
+// This file is the source of truth: edit it here, then run `npm run theme:sync`
+// in iabdinur.github.io and portfolio. Their `npm run deploy` refuses to publish
+// a copy that has drifted from this one.
+import { extendTheme, type StyleFunctionProps, type ThemeConfig } from '@chakra-ui/react'
+
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+}
 
 const theme = extendTheme({
-  config: {
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
-  },
+  config,
   colors: {
     brand: {
       50: '#f0f9ff',
@@ -14,28 +20,37 @@ const theme = extendTheme({
       400: '#38bdf8',
       500: '#0ea5e9',
       600: '#0284c7',
-      700: '#0369a1',
+      700: '#145F95',
       800: '#075985',
       900: '#0c4a6e',
     },
-    // Custom dark mode colors
-    dark: {
-      bg: '#223244',
-      text: '#ffffff',
-      border: '#202020',
-    },
   },
   fonts: {
-    heading: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`,
+    heading: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif`,
+    body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif`,
+    mono: `"Fira Code", "Consolas", "Monaco", monospace`,
   },
   styles: {
-    global: (props: any) => ({
+    global: (props: StyleFunctionProps) => ({
       body: {
-        bg: props.colorMode === 'dark' ? '#212934' : 'white',
-        color: props.colorMode === 'dark' ? 'white' : 'black',
+        bg: props.colorMode === 'dark' ? 'gray.900' : 'white',
+        color: props.colorMode === 'dark' ? 'gray.100' : 'gray.900',
       },
     }),
+  },
+  components: {
+    Button: {
+      defaultProps: {
+        colorScheme: 'brand',
+      },
+    },
+    Link: {
+      baseStyle: {
+        _hover: {
+          textDecoration: 'none',
+        },
+      },
+    },
   },
 })
 

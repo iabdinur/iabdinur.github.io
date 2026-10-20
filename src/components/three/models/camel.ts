@@ -5,9 +5,9 @@ import { addBox, addLine } from "../voxel/primitives";
 export function makeVoxelCamel(scale = 0.08, colorMode: 'light' | 'dark' = 'light') {
   const vox: Voxel[] = [];
 
-  // Use white colors in dark mode, sand colors in light mode
-  const sand = colorMode === 'dark' ? "#FFFFFF" : "#a07b4f";
-  const dark = colorMode === 'dark' ? "#CCCCCC" : "#1a1410";
+  // Brand blues, matching the blog palette: brand.300 on dark, brand.700 on light
+  const sand = colorMode === 'dark' ? "#7dd3fc" : "#145F95";
+  const dark = colorMode === 'dark' ? "#0c4a6e" : "#1A202C";
 
   // Body
   addBox(vox, new THREE.Vector3(-10, 6, -4), new THREE.Vector3(10, 12, 4), sand);

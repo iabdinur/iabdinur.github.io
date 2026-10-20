@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview --base /",
-    "predeploy": "npm run build",
+    "predeploy": "npm run theme:check && npm run build",
+    "theme:check": "node scripts/theme-sync.mjs src/theme/index.ts",
+    "theme:sync": "node scripts/theme-sync.mjs src/theme/index.ts --write",
     "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },

@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 const MotionBox = motion(Box)
 
 export default function About() {
-  const textColor = useColorModeValue('black', 'white')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
-    <Container maxW="container.xl" py={20}>
+    <Container maxW="680px" px={{ base: 4, md: 8 }} py={20}>
       <MotionBox
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,7 +1,7 @@
 import { useColorModeValue } from '@chakra-ui/react'
 
 const FootprintIcon = () => {
-  const fillColor = useColorModeValue('#202023', 'whiteAlpha.900')
+  const fillColor = useColorModeValue('gray.900', 'gray.100')
   
   return (
     <svg

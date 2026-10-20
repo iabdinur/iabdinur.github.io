@@ -1,45 +1,48 @@
 import { Box, Container, Heading, Text, SimpleGrid, Icon, useColorModeValue, useColorMode } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { 
-  FaJava, 
-  FaJs, 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaDatabase, 
-  FaReact, 
-  FaAws, 
-  FaDocker, 
-  FaGithub, 
-  FaGitlab, 
-  FaLinux, 
-  FaWindows,
-  FaApple,
-  FaCloud
+import {
+  FaJava,
+  FaDatabase,
+  FaReact,
+  FaAws,
+  FaDocker,
+  FaGithub,
+  FaGitAlt,
+  FaCloud,
+  FaVial,
+  FaBoxes,
 } from 'react-icons/fa'
-import { 
-  SiSpringboot, 
-  SiDotnet, 
+import {
+  SiSpringboot,
+  SiDotnet,
+  SiPython,
+  SiTypescript,
+  SiHaskell,
+  SiRedis,
+  SiRabbitmq,
+  SiKubernetes,
+  SiGithubactions,
   SiJunit5,
-  SiSwagger
 } from 'react-icons/si'
 import { BiLogoPostgresql } from 'react-icons/bi'
 
 const MotionBox = motion(Box)
 
+// Mirrors the Technical Skills section of the resume (public/resume.pdf).
 const skillCategories = [
   {
     title: 'Languages',
     skills: [
       { name: 'Java', icon: FaJava, color: '#ED8B00' }, // Java orange
       { name: 'C#', icon: SiDotnet, color: '#512BD4' }, // .NET purple
+      { name: 'Python', icon: SiPython, color: '#3776AB' }, // Python blue
       { name: 'SQL', icon: FaDatabase, color: '#336791' }, // SQL blue
-      { name: 'JavaScript', icon: FaJs, color: '#F7DF1E' }, // JavaScript yellow
-      { name: 'HTML', icon: FaHtml5, color: '#E34F26' }, // HTML orange-red
-      { name: 'CSS', icon: FaCss3Alt, color: '#1572B6' }, // CSS blue
+      { name: 'Haskell', icon: SiHaskell, color: '#5D4F85' }, // Haskell purple (UIUC MCS, CS 421)
+      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' }, // TypeScript blue
     ],
   },
   {
-    title: 'Frameworks & APIs',
+    title: 'Frameworks & Services',
     skills: [
       { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' }, // Spring green
       { name: 'ASP.NET', icon: SiDotnet, color: '#512BD4' }, // .NET purple
@@ -47,59 +50,55 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Databases',
+    title: 'Data & Messaging',
     skills: [
       { name: 'PostgreSQL', icon: BiLogoPostgresql, color: '#336791' }, // PostgreSQL blue
       { name: 'SQL Server', icon: FaDatabase, color: '#CC2927' }, // SQL Server red
+      { name: 'Redis', icon: SiRedis, color: '#DC382D' }, // Redis red
+      { name: 'RabbitMQ', icon: SiRabbitmq, color: '#FF6600' }, // RabbitMQ orange
     ],
   },
   {
     title: 'Cloud & DevOps',
     skills: [
-      { name: 'Azure', icon: FaCloud, color: '#0078D4' }, // Azure blue
       { name: 'AWS', icon: FaAws, color: '#FF9900' }, // AWS orange
+      { name: 'Azure', icon: FaCloud, color: '#0078D4' }, // Azure blue
       { name: 'Docker', icon: FaDocker, color: '#2496ED' }, // Docker blue
+      { name: 'Kubernetes', icon: SiKubernetes, color: '#326CE5' }, // Kubernetes blue
+      { name: 'GitHub Actions', icon: SiGithubactions, color: '#2088FF' }, // GitHub Actions blue
     ],
   },
   {
     title: 'Testing & Tools',
     skills: [
-      { name: 'GitHub', icon: FaGithub, color: '#181717' }, // GitHub black (use white in dark mode)
-      { name: 'GitLab', icon: FaGitlab, color: '#FC6D26' }, // GitLab orange
       { name: 'JUnit', icon: SiJunit5, color: '#25A162' }, // JUnit green
-      { name: 'Swagger', icon: SiSwagger, color: '#85EA2D' }, // Swagger green
-    ],
-  },
-  {
-    title: 'Systems',
-    skills: [
-      { name: 'Linux', icon: FaLinux, color: '#FCC624' }, // Linux yellow
-      { name: 'Windows', icon: FaWindows, color: '#0078D4' }, // Windows blue
-      { name: 'macOS', icon: FaApple, color: '#000000' }, // Apple black (use white in dark mode)
+      { name: 'Mockito', icon: FaVial, color: '#78A641' }, // generic icon, Mockito green
+      { name: 'Testcontainers', icon: FaBoxes, color: '#2E9E95' }, // generic icon, Testcontainers teal
+      { name: 'Git', icon: FaGitAlt, color: '#F05032' }, // Git orange
+      { name: 'GitHub', icon: FaGithub, color: '#181717' }, // GitHub black (use white in dark mode)
     ],
   },
 ]
 
 export default function Skills() {
   const { colorMode } = useColorMode()
-  const cardBg = useColorModeValue('white', '#212934')
-  const cardHoverBg = useColorModeValue('gray.100', '#2a3d52')
-  const textColor = useColorModeValue('black', 'white')
-  const headingColor = useColorModeValue('black', 'white')
-  const borderColor = useColorModeValue('gray.200', '#202020')
-  
+  const cardBg = useColorModeValue('white', 'gray.800')
+  const textColor = useColorModeValue('gray.600', 'gray.400')
+  const headingColor = useColorModeValue('gray.900', 'gray.100')
+
+
   // Helper function to get icon color based on color mode
   const getIconColor = (skillColor: string, skillName: string) => {
-    // For dark icons (GitHub, macOS), use white in dark mode
-    if ((skillName === 'GitHub' || skillName === 'macOS') && colorMode === 'dark') {
+    // For dark icons (GitHub), use white in dark mode
+    if (skillName === 'GitHub' && colorMode === 'dark') {
       return '#FFFFFF'
     }
     return skillColor
   }
 
   return (
-    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }} px={{ base: 4, md: 0 }}>
-      <Container maxW="container.md">
+    <Box pt={{ base: 4, md: 6 }} pb={{ base: 12, md: 20 }}>
+      <Container maxW="680px" px={{ base: 4, md: 8 }}>
         <MotionBox
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,24 +107,23 @@ export default function Skills() {
         >
           <Heading size="lg" mb={4} color={headingColor}>Skills</Heading>
           <Text fontSize="lg" color={textColor} mb={{ base: 6, md: 8 }}>
-            A comprehensive overview of my technical expertise and the technologies I work with.
+            The languages, frameworks, and tools I use most often, grouped by where they fit.
           </Text>
         </MotionBox>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={{ base: 6, md: 8 }} w="100%">
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8 }} w="100%">
             {skillCategories.map((category, categoryIndex) => (
               <MotionBox
                 key={category.title}
                 p={6}
                 bg={cardBg}
                 borderRadius="lg"
-                borderWidth="1px"
-                borderColor={borderColor}
+                boxShadow="md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                _hover={{ transform: 'translateY(-5px)', bg: cardHoverBg }}
+                _hover={{ boxShadow: 'lg' }}
               >
                 <Heading size="md" mb={4} color={headingColor}>{category.title}</Heading>
                 <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4}>
