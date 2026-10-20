@@ -1,5 +1,5 @@
 # Ibrahim's Homepage
-https://iabdinur.com
+https://iabdinur.dev
 
 ## Stack
 - **Vite** - Next generation frontend tooling
@@ -44,10 +44,10 @@ iabdinur.github.io/
 ```
 
 ## Contact
-- **Website**: [iabdinur.com](https://iabdinur.com)
+- **Website**: [iabdinur.dev](https://iabdinur.dev)
 - **GitHub**: [@iabdinur](https://github.com/iabdinur)
 - **LinkedIn**: [ibrahim-abdinur](https://linkedin.com/in/ibrahim-abdinur)
-- **Blog**: [blog.iabdinur.com](https://blog.iabdinur.com/)
+- **Blog**: [blog.iabdinur.dev](https://blog.iabdinur.dev/)
 - **Email**: iabdinur@icloud.com
 
 ## License
